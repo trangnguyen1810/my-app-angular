@@ -1,0 +1,36 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <img class="logo" src="{{logo || '../../assets/images/logo.png'}}">
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav mr-auto">
+        <li *ngFor="let menu of menus" class="nav-item active">
+          <a class="nav-link" target="_blank" href="{{menu.url}}"><span>{{menu.label}}</span></a>
+        </li>
+      </ul>
+    </div>
+    <div id="userinfo">
+        <img class="avatar" src="{{avatar || '../../assets/images/avatar.png'}}" (click)=showUserProfileFn()>
+        <aside *ngIf="isShowUserProfile">
+            <div class="user-profile">
+                <h4>User Profile:</h4>
+                <br>
+                <div class="user-field">
+                  <label class="user-label">Name:</label>
+                  <span class="user-field-value">{{profile.Name}}</span>
+                </div>
+                <hr>
+                <div class="user-field">
+                  <label class="user-label">Email:</label>
+                  <span class="user-field-value">{{profile.Email}}</span>
+                </div>
+                <hr>
+                <div class="user-field">
+                    <label class="user-label">Phone:</label>
+                    <span class="user-field-value">{{profile.Phone}}</span>
+                  </div>
+                  <hr>
+            </div>
+        </aside>
+    </div>
+    
+  </nav>
